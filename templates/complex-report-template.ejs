@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>示例报告</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+
+  .container {
+      background-color: white;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 20px auto;
+      border-radius: 5px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th,
+    td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      color: #666;
+      line-height: 1.6;
+    }
+
+  .footer {
+      text-align: center;
+      margin-top: 30px;
+      color: #999;
+    }
+  </style>
+</head>
+
+<body>
+  <h1><%= data.title %></h1>
+  <div class="container">
+    <h2>报告概述</h2>
+    <p><%= data.content %></p>
+    <p>这是一份用于展示的示例报告，旨在呈现一些基本的文本、图片排版效果，以满足您对报告样式的初步了解需求。</p>
+    <img src="data:image/jpeg;base64,<%= data.logo %>" alt="示例图片">
+    <h2>详细内容</h2>
+    <h3>市场调研数据</h3>
+    <table>
+      <tr>
+        <th>产品类别</th>
+        <th>销售额（万元）</th>
+        <th>市场份额（%）</th>
+      </tr>
+      <tr>
+        <td>电子产品</td>
+        <td>500</td>
+        <td>30</td>
+      </tr>
+      <tr>
+        <td>家居用品</td>
+        <td>300</td>
+        <td>20</td>
+      </tr>
+      <tr>
+        <td>食品饮料</td>
+        <td>400</td>
+        <td>25</td>
+      </tr>
+    </table>
+    <h3>关键发现</h3>
+    <ul>
+      <li>电子产品销售额领先，但市场竞争激烈。</li>
+      <li>家居用品需求呈稳步增长态势。</li>
+      <li>食品饮料行业需注重创新以提升份额。</li>
+    </ul>
+  </div>
+  <p>Dynamic Content</p>
+  <% if (data.items && data.items.length > 0) { %>
+    <h3>项目列表</h3>
+    <ul class="item-list">
+      <% data.items.forEach(item => { %>
+        <li><%= item %></li>
+      <% }) %>
+    </ul>
+  <% } %>
+  <div class="footer">
+    &copy; 2025 版权所有
+  </div>
+</body>
+
+</html>

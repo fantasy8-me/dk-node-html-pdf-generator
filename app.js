@@ -2,6 +2,8 @@ const express = require('express');
 const ejs = require('ejs');
 const puppeteer = require('puppeteer');
 const path = require('path');
+const fs = require('fs').promises;
+
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -30,18 +32,21 @@ app.get('/generate-pdf', async (req, res) => {
     const items = req.query.items ? 
       req.query.items.split('\n').filter(item => item.trim()) : 
       [];
-
+    
+    const logo = await getBase64FromPath(path.join(__dirname, 'templates', `sample.png`));
     const html = await ejs.renderFile(
       path.join(__dirname, 'templates', `${templateName}.ejs`),
       { 
         data: {
           ...req.query,
-          items
+          items,
+          logo
         }
       }
     );
-
-    await page.setContent(html);
+    
+    // await page.setContent(html);
+    await page.setContent(html, { waitUntil: ["load", "networkidle0", "domcontentloaded"], });
     // 生成PDF
     const pdfBuffer = await page.pdf({
       format: 'A4',
@@ -88,3 +93,11 @@ app.get('/generate-pdf', async (req, res) => {
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
+
+
+
+async function getBase64FromPath(filePath) {
+  const data = await fs.readFile(filePath);// don't specify the enconding, then return buffer instead of string
+  // const buffer = Buffer.from(data, 'binary');
+  return data.toString('base64');
+}
