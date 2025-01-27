@@ -1,6 +1,6 @@
 const express = require('express');
 const ejs = require('ejs');
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-core');
 const path = require('path');
 const fs = require('fs').promises;
 
@@ -23,7 +23,12 @@ app.get('/', (req, res) => {
 // PDF生成路由
 app.get('/generate-pdf', async (req, res) => {
   try {
-    const browser = await puppeteer.launch();
+    // const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+      executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', // Replace with your Chrome path
+      headless: true, // Run in headless mode (no GUI)
+      args: ['--no-sandbox', '--disable-setuid-sandbox'] // Optional flags for Linux
+    });    
     const page = await browser.newPage();
     
     // 渲染模板
