@@ -7,6 +7,7 @@ const fs = require('fs').promises;
 
 const app = express();
 const port = process.env.PORT || 3000;
+console.log('CHROME_PATH',process.env.CHROME_PATH);
 
 // 设置模板引擎
 app.set('view engine', 'ejs');
@@ -24,8 +25,9 @@ app.get('/', (req, res) => {
 app.get('/generate-pdf', async (req, res) => {
   try {
     // const browser = await puppeteer.launch();
+    
     const browser = await puppeteer.launch({
-      executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', // Replace with your Chrome path
+      executablePath: process.env.CHROME_PATH, // Replace with your Chrome path
       headless: true, // Run in headless mode (no GUI)
       args: ['--no-sandbox', '--disable-setuid-sandbox'] // Optional flags for Linux
     });    
