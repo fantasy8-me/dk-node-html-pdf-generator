@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sample Report</title>
+  <title>示例报告</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -18,7 +18,7 @@
       text-align: center;
     }
 
-    .container {
+  .container {
       background-color: white;
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
       padding: 20px;
@@ -57,7 +57,7 @@
       line-height: 1.6;
     }
 
-    .footer {
+  .footer {
       text-align: center;
       margin-top: 30px;
       color: #999;
@@ -68,44 +68,44 @@
 <body>
   <h1><%= data.title %></h1>
   <div class="container">
-    <h2>Report Overview</h2>
+    <h2>报告概述</h2>
     <p><%= data.content %></p>
-    <p>This is a sample report designed to showcase some basic text and image layout effects to meet your initial understanding needs of the report style.</p>
-    <img src="data:image/jpeg;base64,<%= data.logo %>" alt="Sample Image">
-    <h2>Detailed Content</h2>
-    <h3>Market Research Data</h3>
+    <p>这是一份用于展示的示例报告，旨在呈现一些基本的文本、图片排版效果，以满足您对报告样式的初步了解需求。</p>
+    <img src="data:image/jpeg;base64,<%= data.logo %>" alt="示例图片">
+    <h2>详细内容</h2>
+    <h3>市场调研数据</h3>
     <table>
       <tr>
-        <th>Product Category</th>
-        <th>Sales (in ten thousand yuan)</th>
-        <th>Market Share (%)</th>
+        <th>产品类别</th>
+        <th>销售额（万元）</th>
+        <th>市场份额（%）</th>
       </tr>
       <tr>
-        <td>Electronics</td>
+        <td>电子产品</td>
         <td>500</td>
         <td>30</td>
       </tr>
       <tr>
-        <td>Household Items</td>
+        <td>家居用品</td>
         <td>300</td>
         <td>20</td>
       </tr>
       <tr>
-        <td>Food and Beverages</td>
+        <td>食品饮料</td>
         <td>400</td>
         <td>25</td>
       </tr>
     </table>
-    <h3>Key Findings</h3>
+    <h3>关键发现</h3>
     <ul>
-      <li>The electronics sector leads in sales, but the market is highly competitive.</li>
-      <li>The demand for household items is showing a steady growth trend.</li>
-      <li>The food and beverage industry needs to focus on innovation to increase its market share.</li>
+      <li>电子产品销售额领先，但市场竞争激烈。</li>
+      <li>家居用品需求呈稳步增长态势。</li>
+      <li>食品饮料行业需注重创新以提升份额。</li>
     </ul>
   </div>
   <p>Dynamic Content</p>
   <% if (data.items && data.items.length > 0) { %>
-    <h3>Project List</h3>
+    <h3>项目列表</h3>
     <ul class="item-list">
       <% data.items.forEach(item => { %>
         <li><%= item %></li>
@@ -113,7 +113,7 @@
     </ul>
   <% } %>
   <div class="footer">
-    &copy; 2025 All rights reserved
+    &copy; 2025 版权所有
   </div>
 </body>
 

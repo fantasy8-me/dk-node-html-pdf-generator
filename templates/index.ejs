@@ -5,44 +5,44 @@
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <h1>PDF生成器</h1>
+  <h1>PDF Generator</h1>
   <form action="/generate-pdf" method="GET">
     <div class="form-group">
-      <label for="template">选择模板：</label>
+      <label for="template">Select Template:</label>
       <select id="template" name="template" required>
-        <option value="complex-report-template">复杂报告模板</option>
-        <option value="pdf-template">默认模板</option>
-        <option value="report-template">报告模板</option>
-        <option value="letter-template">信件模板</option>
+        <option value="complex-report-template">Complex Report Template</option>
+        <option value="pdf-template">Default Template</option>
+        <option value="report-template">Report Template</option>
+        <option value="letter-template">Letter Template</option>
       </select>
     </div>
     
     <div class="form-group">
-      <label for="title">标题：</label>
+      <label for="title">Title:</label>
       <input type="text" id="title" name="title" required>
     </div>
     
     <div class="form-group">
-      <label for="content">内容：</label>
+      <label for="content">Content:</label>
       <textarea id="content" name="content" rows="10" required></textarea>
     </div>
     
     <div class="form-group">
-      <label for="recipient">收件人（仅信件模板）：</label>
+      <label for="recipient">Recipient (Only for Letter Template):</label>
       <input type="text" id="recipient" name="recipient">
     </div>
     
     <div class="form-group">
-      <label for="sender">发件人（仅信件模板）：</label>
+      <label for="sender">Sender (Only for Letter Template):</label>
       <input type="text" id="sender" name="sender">
     </div>
     
     <div class="form-group">
-      <label for="items">项目列表（仅报告模板）：</label>
-      <textarea id="items" name="items" rows="3" placeholder="每行一个项目"></textarea>
+      <label for="items">Item List (Only for Report Template):</label>
+      <textarea id="items" name="items" rows="3" placeholder="One item per line"></textarea>
     </div>
     
-    <button type="submit">生成PDF</button>
+    <button type="submit">Generate PDF</button>
   </form>
 </body>
 </html>
