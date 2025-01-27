@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>报告模板</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20mm;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .content {
+      margin-top: 20px;
+      line-height: 1.6;
+    }
+    .footer {
+      position: absolute;
+      bottom: 20mm;
+      width: 100%;
+      text-align: center;
+      font-size: 12px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="title"><%= data.title %></div>
+  </div>
+  <div class="content">
+    <%= data.content %>
+    <% if (data.items && data.items.length > 0) { %>
+      <h3>项目列表</h3>
+      <ul class="item-list">
+        <% data.items.forEach(item => { %>
+          <li><%= item %></li>
+        <% }) %>
+      </ul>
+    <% } %>
+  </div>
+  <div class="footer">
+    第 <span class="pageNumber"></span> 页，共 <span class="totalPages"></span> 页
+  </div>
+</body>
+</html>

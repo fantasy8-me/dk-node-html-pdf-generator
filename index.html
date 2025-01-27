@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome Button</title>
+  <style>
+    .welcome-btn {
+      background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+      border: none;
+      color: white;
+      padding: 15px 30px;
+      font-size: 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .welcome-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    }
+    
+    .welcome-btn:active {
+      transform: translateY(0);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <button class="welcome-btn" onclick="showWelcome()">Click Me!</button>
+  </div>
+
+  <script>
+    function showWelcome() {
+      alert("Welcome! 🎉\nThank you for visiting!");
+    }
+  </script>
+</body>
+</html>

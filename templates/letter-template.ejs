@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>信件模板</title>
+  <style>
+    body {
+      font-family: 'Times New Roman', serif;
+      margin: 0;
+      padding: 20mm;
+    }
+    .header {
+      margin-bottom: 40px;
+    }
+    .date {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+    .recipient {
+      margin-bottom: 20px;
+    }
+    .content {
+      line-height: 1.6;
+      text-indent: 2em;
+    }
+    .signature {
+      margin-top: 40px;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+  <div class="date"><%= new Date().toLocaleDateString() %></div>
+  <div class="recipient">致：<%= data.recipient || '相关方' %></div>
+  <div class="content">
+    <%= data.content %>
+  </div>
+  <div class="signature">
+    <div>此致</div>
+    <div>敬礼</div>
+    <div style="margin-top: 20px;"><%= data.sender || '发件人' %></div>
+  </div>
+</body>
+</html>
