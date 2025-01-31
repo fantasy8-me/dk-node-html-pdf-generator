@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>报告模板</title>
+  <title>Report Template</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -38,7 +38,7 @@
   <div class="content">
     <%= data.content %>
     <% if (data.items && data.items.length > 0) { %>
-      <h3>项目列表</h3>
+      <h3>Project List</h3>
       <ul class="item-list">
         <% data.items.forEach(item => { %>
           <li><%= item %></li>
@@ -47,7 +47,7 @@
     <% } %>
   </div>
   <div class="footer">
-    第 <span class="pageNumber"></span> 页，共 <span class="totalPages"></span> 页
+    Page <span class="pageNumber"></span> of <span class="totalPages"></span>
   </div>
 </body>
 </html>

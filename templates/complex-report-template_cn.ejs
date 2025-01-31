@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>示例报告</title>
+  <title>Sample Report</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -68,44 +68,44 @@
 <body>
   <h1><%= data.title %></h1>
   <div class="container">
-    <h2>报告概述</h2>
+    <h2>Report Overview</h2>
     <p><%= data.content %></p>
-    <p>这是一份用于展示的示例报告，旨在呈现一些基本的文本、图片排版效果，以满足您对报告样式的初步了解需求。</p>
-    <img src="data:image/jpeg;base64,<%= data.logo %>" alt="示例图片">
-    <h2>详细内容</h2>
-    <h3>市场调研数据</h3>
+    <p>This is a sample report for demonstration purposes, showcasing basic text and image layout to meet your initial understanding of report styles.</p>
+    <img src="data:image/jpeg;base64,<%= data.logo %>" alt="Sample Image">
+    <h2>Details</h2>
+    <h3>Market Research Data</h3>
     <table>
       <tr>
-        <th>产品类别</th>
-        <th>销售额（万元）</th>
-        <th>市场份额（%）</th>
+        <th>Product Category</th>
+        <th>Sales (10k RMB)</th>
+        <th>Market Share (%)</th>
       </tr>
       <tr>
-        <td>电子产品</td>
+        <td>Electronics</td>
         <td>500</td>
         <td>30</td>
       </tr>
       <tr>
-        <td>家居用品</td>
+        <td>Home Goods</td>
         <td>300</td>
         <td>20</td>
       </tr>
       <tr>
-        <td>食品饮料</td>
+        <td>Food & Beverage</td>
         <td>400</td>
         <td>25</td>
       </tr>
     </table>
-    <h3>关键发现</h3>
+    <h3>Key Findings</h3>
     <ul>
-      <li>电子产品销售额领先，但市场竞争激烈。</li>
-      <li>家居用品需求呈稳步增长态势。</li>
-      <li>食品饮料行业需注重创新以提升份额。</li>
+      <li>Electronics sales lead, but market competition is intense.</li>
+      <li>Home goods demand shows steady growth.</li>
+      <li>Food & beverage industry needs to focus on innovation to increase market share.</li>
     </ul>
   </div>
   <p>Dynamic Content</p>
   <% if (data.items && data.items.length > 0) { %>
-    <h3>项目列表</h3>
+    <h3>Project List</h3>
     <ul class="item-list">
       <% data.items.forEach(item => { %>
         <li><%= item %></li>
@@ -113,7 +113,7 @@
     </ul>
   <% } %>
   <div class="footer">
-    &copy; 2025 版权所有
+    &copy; 2025 All Rights Reserved
   </div>
 </body>
 

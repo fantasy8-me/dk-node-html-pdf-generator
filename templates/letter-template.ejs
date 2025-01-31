@@ -31,14 +31,13 @@
 </head>
 <body>
   <div class="date"><%= new Date().toLocaleDateString() %></div>
-  <div class="recipient">致：<%= data.recipient || '相关方' %></div>
+  <div class="recipient">To: <%= data.recipient || 'Relevant Party' %></div>
   <div class="content">
     <%= data.content %>
   </div>
   <div class="signature">
-    <div>此致</div>
-    <div>敬礼</div>
-    <div style="margin-top: 20px;"><%= data.sender || '发件人' %></div>
+    <div>Yours sincerely,</div>
+    <div style="margin-top: 20px;"><%= data.sender || 'Sender' %></div>
   </div>
 </body>
 </html>
